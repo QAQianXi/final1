@@ -9,7 +9,7 @@
 		<version>3.2.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.rabbiter.sms</groupId>
+	<groupId>com.zxc.lims</groupId>
 	<artifactId>StudentManagerSystemApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>StudentManagerSystemApi</name>
@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.32</version>
+			<version>8.0.33</version>
 		</dependency>
 
 		<dependency>
