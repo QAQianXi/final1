@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Description 教师课程Mapper层
  * Author: zxc
- * Date: 2020/3/29 15:13
+ * Date: 2023/3/29 15:13
  **/
 @Mapper
 public interface TeacherCourseMapper {
@@ -20,7 +20,7 @@ public interface TeacherCourseMapper {
    * @param teacherCourse
    * @return void
    * @author zxc
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   void add(TeacherCourse teacherCourse);
 
@@ -30,7 +30,7 @@ public interface TeacherCourseMapper {
    * @param ids
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void delete(@Param("ids") List<Integer> ids);
 
@@ -40,7 +40,7 @@ public interface TeacherCourseMapper {
    * @param teacherCourse
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void update(TeacherCourse teacherCourse);
 

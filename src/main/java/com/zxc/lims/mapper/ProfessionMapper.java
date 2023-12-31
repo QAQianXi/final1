@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Description 专业信息 Mapper层
  * Author: zxc
- * Date: 2020/3/31 17:34
+ * Date: 2023/3/31 17:34
  **/
 @Mapper
 public interface ProfessionMapper {

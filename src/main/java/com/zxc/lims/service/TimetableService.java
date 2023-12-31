@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Description 课程表Service层
  * Author: zxc
- * Date: 2020/4/7 14:03
+ * Date: 2023/4/7 14:03
  **/
 public interface TimetableService {
   /**
@@ -17,7 +17,7 @@ public interface TimetableService {
    * @param list
    * @return void
    * @author zxc
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   void add(List<WeekCourse> list);
 
@@ -26,7 +26,7 @@ public interface TimetableService {
    * @param condition
    * @author zxc
    * @return List<WeekCourse>
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   List<WeekCourse> getTimetable(Map<String, Object> condition);
   /**

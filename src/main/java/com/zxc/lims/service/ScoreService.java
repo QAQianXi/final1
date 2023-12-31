@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Description 分数信息Service类
  * Author: zxc
- * Date: 2020/3/13 15:47
+ * Date: 2023/3/13 15:47
  **/
 public interface ScoreService {
   /**
@@ -20,7 +20,7 @@ public interface ScoreService {
    * @param condition
    * @author zxc
    * @return com.zxc.lims.utils.PagingResult
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   PagingResult<Course> getCourseList(RowBounds rowBounds, Map<String, Object> condition);
   /**

@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Description 教师课程Service层
  * Author: zxc
- * Date: 2020/3/29 15:09
+ * Date: 2023/3/29 15:09
  **/
 public interface TeacherCourseService {
   /**
@@ -17,7 +17,7 @@ public interface TeacherCourseService {
    * @param list
    * @return void
    * @author zxc
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   void add(List<TeacherCourse> list);
 
@@ -27,7 +27,7 @@ public interface TeacherCourseService {
    * @param ids
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void delete(List<Integer> ids);
 
@@ -36,7 +36,7 @@ public interface TeacherCourseService {
    * @param teacherCourse
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void update(TeacherCourse teacherCourse);
 

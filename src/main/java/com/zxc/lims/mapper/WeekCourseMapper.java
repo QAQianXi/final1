@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Description 课程表具体安排Mapper层
  * Author: zxc
- * Date: 2020/4/7 16:46
+ * Date: 2023/4/7 16:46
  **/
 @Mapper
 public interface WeekCourseMapper {
@@ -19,7 +19,7 @@ public interface WeekCourseMapper {
    * @param weekCourse
    * @return void
    * @author zxc
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   void add(WeekCourse weekCourse);
   /**

@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Description 管理员账号Mapper层
  * Author: zxc
- * Date: 2020/3/28 11:08
+ * Date: 2023/3/28 11:08
  **/
 @Mapper
 public interface AdminMapper {
@@ -20,7 +20,7 @@ public interface AdminMapper {
    * @param user
    * @return void
    * @author zxc
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   void add(User user);
 
@@ -30,7 +30,7 @@ public interface AdminMapper {
    * @param ids
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void delete(@Param("ids") List<Integer> ids);
 
@@ -40,7 +40,7 @@ public interface AdminMapper {
    * @param user
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void update(User user);
 
@@ -49,7 +49,7 @@ public interface AdminMapper {
    * @param rowBounds
    * @author zxc
    * @return java.util.List<com.zxc.lims.pojo.User>
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   List<User> getAdminList(PageRowBounds rowBounds, @Param("condition") Map<String, Object> condition);
   /**

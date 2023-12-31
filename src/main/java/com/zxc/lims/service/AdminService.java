@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Description 管理员Service层
  * Author: zxc
- * Date: 2020/3/28 11:05
+ * Date: 2023/3/28 11:05
  **/
 public interface AdminService {
   /**
@@ -18,7 +18,7 @@ public interface AdminService {
    * @param user
    * @return void
    * @author zxc
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   void add(User user);
 
@@ -28,7 +28,7 @@ public interface AdminService {
    * @param ids
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void delete(List<Integer> ids);
 
@@ -38,7 +38,7 @@ public interface AdminService {
    * @param user
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void update(User user);
 
@@ -48,7 +48,7 @@ public interface AdminService {
    * @param condition
    * @author zxc
    * @return com.zxc.lims.utils.PagingResult
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   PagingResult<User> getAdminList(RowBounds rowBounds, Map<String, Object> condition);
 }

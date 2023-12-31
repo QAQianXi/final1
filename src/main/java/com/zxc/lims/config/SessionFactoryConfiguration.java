@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * Description
  * Author: zxc
- * Date: 2020/2/27 11:31
+ * Date: 2023/2/27 11:31
  **/
 @Configuration
 public class SessionFactoryConfiguration {

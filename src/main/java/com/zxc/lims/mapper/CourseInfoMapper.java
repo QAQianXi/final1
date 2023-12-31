@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Description 课程具体安排表
  * Author: zxc
- * Date: 2020/5/3 14:57
+ * Date: 2023/5/3 14:57
  **/
 @Mapper
 public interface CourseInfoMapper {

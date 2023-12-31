@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * Description 课程具体安排
  * Author: zxc
- * Date: 2020/5/3 14:48
+ * Date: 2023/5/3 14:48
  **/
 @Data
 @NoArgsConstructor

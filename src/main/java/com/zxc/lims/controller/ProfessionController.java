@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Description 所有专业控制层
  * Author: zxc
- * Date: 2020/3/31 17:28
+ * Date: 2023/3/31 17:28
  **/
 @RestController
 @RequestMapping("/api/sms/profession")

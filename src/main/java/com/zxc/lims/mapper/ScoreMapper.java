@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Description 分数信息 Mapper层
  * Author: zxc
- * Date: 2020/3/14 16:25
+ * Date: 2023/3/14 16:25
  **/
 @Mapper
 public interface ScoreMapper {

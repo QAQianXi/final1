@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * Description 教师课程任命表实体类
  * Author: zxc
- * Date: 2020/3/29 15:04
+ * Date: 2023/3/29 15:04
  **/
 @Data
 @NoArgsConstructor

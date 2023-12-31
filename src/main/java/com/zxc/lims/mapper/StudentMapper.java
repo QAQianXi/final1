@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Description 学生用户mapper层
  * Author: zxc
- * Date: 2020/3/7 15:11
+ * Date: 2023/3/7 15:11
  **/
 @Mapper
 public interface StudentMapper {
@@ -20,7 +20,7 @@ public interface StudentMapper {
    * @param user
    * @return void
    * @author zxc
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   void addStudent(User user);
 
@@ -30,7 +30,7 @@ public interface StudentMapper {
    * @param ids
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void delete(@Param("ids") List<String> ids);
 
@@ -40,7 +40,7 @@ public interface StudentMapper {
    * @param user
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void update(User user);
 
@@ -49,7 +49,7 @@ public interface StudentMapper {
    * @param rowBounds
    * @author zxc
    * @return java.util.List<com.zxc.lims.pojo.User>
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   List<User> getStudentList(PageRowBounds rowBounds,  @Param("condition") Map<String, Object> condition);
   /**

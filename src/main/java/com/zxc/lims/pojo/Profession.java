@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * Description 专业实体类
  * Author: zxc
- * Date: 2020/3/31 17:25
+ * Date: 2023/3/31 17:25
  **/
 @Data
 @NoArgsConstructor

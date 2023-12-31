@@ -19,7 +19,7 @@ import java.util.Map;
 /**
  * Description 课程信息业务层
  * Author: zxc
- * Date: 2020/3/11 14:49
+ * Date: 2023/3/11 14:49
  **/
 @Service
 public class CourseServiceImpl implements CourseService {

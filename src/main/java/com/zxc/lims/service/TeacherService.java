@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Description 教师用户接口
  * Author: zxc
- * Date: 2020/3/7 15:05
+ * Date: 2023/3/7 15:05
  **/
 public interface TeacherService {
   /**
@@ -18,7 +18,7 @@ public interface TeacherService {
    * @param user
    * @return void
    * @author zxc
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   void addTeacher(User user);
 
@@ -28,7 +28,7 @@ public interface TeacherService {
    * @param ids
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void delete(List<Integer> ids);
 
@@ -38,7 +38,7 @@ public interface TeacherService {
    * @param user
    * @return void
    * @author zxc
-   * @date 2019/8/29 14:55
+   * @date 2023/8/29 14:55
    */
   void update(User user);
 
@@ -48,7 +48,7 @@ public interface TeacherService {
    * @param condition
    * @author zxc
    * @return com.zxc.lims.utils.PagingResult
-   * @date 2020/3/4 23:05
+   * @date 2023/3/4 23:05
    */
   PagingResult<User> getTeacherList(RowBounds rowBounds, Map<String, Object> condition);
 }

@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * Description 教师课程控制层
  * Author: zxc
- * Date: 2020/3/29 15:03
+ * Date: 2023/3/29 15:03
  **/
 @RestController
 @RequestMapping("/api/sms/teacher/course")

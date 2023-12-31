@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * Description  课程表控制层
  * Author: zxc
- * Date: 2020/4/7 14:02
+ * Date: 2023/4/7 14:02
  **/
 @RestController
 @RequestMapping("/api/sms/timetable")

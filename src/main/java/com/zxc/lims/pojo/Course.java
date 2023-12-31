@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Description 课程信息实体类
  * Author: zxc
- * Date: 2020/3/11 14:50
+ * Date: 2023/3/11 14:50
  **/
 @Data
 @NoArgsConstructor

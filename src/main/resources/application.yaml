@@ -2,15 +2,19 @@ server:
   port: 9121
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: mysql://localhost:3306/student_manager_system?characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/student_manager_system?characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: 5656
+  thymeleaf:
+    check-template: false
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: mapper/*.xml
   type-aliases-package: com.zxc.lims.pojo
   configuration:
     use-generated-keys: true
     use-column-label: true
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

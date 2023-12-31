@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * Description 需要登录才能进行操作的注解UserLoginToken
  * Author: zxc
- * Date: 2020/3/30 23:32
+ * Date: 2023/3/30 23:32
  **/
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
