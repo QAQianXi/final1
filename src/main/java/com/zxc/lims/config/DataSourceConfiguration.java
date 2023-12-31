@@ -14,15 +14,15 @@ import java.beans.PropertyVetoException;
  **/
 @Configuration
 // 配置mybatis的扫描路径
-//@MapperScan("com.zxc.lims.dao")
+@MapperScan("com.zxc.lims.mapper")
 public class DataSourceConfiguration {
-  @Value("${jdbc.driver}")
+  @Value("${spring.datasource.driver-class-name}")
   private String jdbcDriver;
-  @Value("${jdbc.url}")
+  @Value("${spring.datasource.url}")
   private String jdbcUrl;
-  @Value("${jdbc.username}")
+  @Value("${spring.datasource.username}")
   private String jdbcUsername;
-  @Value("${jdbc.password}")
+  @Value("${spring.datasource.password}")
   private String jdbcPassword;
 
   @Bean(name="dataSource")

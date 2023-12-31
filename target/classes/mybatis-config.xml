@@ -8,7 +8,7 @@
         <setting name="useGeneratedKeys" value="true"/>
         <!-- 使用列标签替换列别名 默认:true -->
         <setting name="useColumnLabel" value="true"/>
-        <!-- 开启驼峰命名转换 -->
+        <!-- 开启驼峰命名转换 -->x
         <setting name="mapUnderscoreToCamelCase" value="true"/>
         <!-- sql打印 -->
         <setting name="logImpl" value="STDOUT_LOGGING"/>
