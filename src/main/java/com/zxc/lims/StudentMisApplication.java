@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EnableTransactionManagement
-@MapperScan("com.zxc.lims.mapper")
+//@MapperScan("com.zxc.lims.mapper")
 public class StudentMisApplication {
 
   public static void main(String[] args) {

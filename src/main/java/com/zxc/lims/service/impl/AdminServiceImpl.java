@@ -26,7 +26,7 @@ public class AdminServiceImpl implements AdminService {
   @Override
   public void add(User user) {
     int num = adminMapper.checkCodeCount();
-    String username = "980502" + num;
+    String username = "20200101" + num;
     user.setUsername(username);
     user.setPassword("password");
     adminMapper.add(user);
