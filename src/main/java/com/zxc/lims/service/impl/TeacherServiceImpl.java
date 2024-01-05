@@ -12,11 +12,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Description 教师用户业务层
- * Author: zxc
- * Date: 2023/3/7 15:10
- **/
 @Service
 public class TeacherServiceImpl implements TeacherService {
 
@@ -34,10 +29,10 @@ public class TeacherServiceImpl implements TeacherService {
     } else {
       str = Integer.toString(num);
     }
-    String no = "389"+str+user.getSex().toString();
+    String no = "2020"+str+user.getSex().toString();
     user.setUsername(no);
     user.setId(no);
-    user.setPassword("159357");
+    user.setPassword("20200101");
     teacherMapper.addTeacher(user);
   }
 

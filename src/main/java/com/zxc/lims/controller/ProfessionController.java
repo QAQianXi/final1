@@ -9,20 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * Description 所有专业控制层
- * Author: zxc
- * Date: 2023/3/31 17:28
- **/
+
 @RestController
 @RequestMapping("/api/sms/profession")
-public class ProfessionController {
+public class ProfessionController {//所有专业控制层
 
   @Autowired
   private ProfessionService professionService;
 
   @GetMapping("/getProfessionList")
-  private List<Profession> getProfessionList () {
+  private List<Profession> getProfessionList () {//获取专业
     return professionService.getProfessionList();
   }
 }

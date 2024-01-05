@@ -15,11 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import jakarta.annotation.Resource;
 import java.util.*;
 
-/**
- * Description 学生用户业务层
- * Author: zxc
- * Date: 2023/3/7 15:09
- **/
+
 @Service
 public class StudentServiceImpl implements StudentService {
 

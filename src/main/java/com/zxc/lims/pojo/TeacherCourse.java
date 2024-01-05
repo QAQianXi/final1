@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Description 教师课程任命表实体类
+ * Description 教师实验课程任命表实体类
  * Author: zxc
  * Date: 2023/3/29 15:04
  **/
@@ -13,39 +13,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TeacherCourse {
-  /**
-   * id
-   */
-  private Integer id;
-  /**
-   * 教师id
-   */
-  private String teacherId;
-  /**
-   * 教师用户名
-   */
-  private String username;
-  /**
-   * 课程名
-   */
-  private String name;
-  /**
-   * 专业
-   */
-  private String profession;
-  /**
-   * 班级
-   */
-  private String grade;
-  /**
-   * 学期
-   */
-  private Integer term;
-
-  /**
-   * 课程id
-   */
-  private String courseId;
-
+  private Integer id;//id
+  private String teacherId;//教师id
+  private String username;//教师用户名
+  private String name;//实验课程名
+  private String profession;//专业
+  private String grade;//班级
+  private Integer term;//学期
+  private String courseId;//实验课程id
   private CourseInfo courseInfo;
 }

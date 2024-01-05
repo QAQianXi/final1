@@ -5,13 +5,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * Description 用来跳过验证的PassToken
- * Author: zxc
- * Date: 2023/3/30 23:31
- **/
+//用来跳过验证的PassToken
+
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface PassToken {
+public @interface PassToken { //用来跳过验证的PassToken
   boolean required() default true;
 }

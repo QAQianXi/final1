@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Description 课程表实体类
+ * Description 实验课程表实体类
  * Author: zxc
  * Date: 2023/4/7 13:57
  **/

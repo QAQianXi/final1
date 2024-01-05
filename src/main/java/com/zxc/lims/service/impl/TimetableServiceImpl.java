@@ -17,11 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
-/**
- * Description
- * Author: zxc
- * Date: 2023/4/7 14:17
- **/
+
 @Service
 public class TimetableServiceImpl implements TimetableService {
 
@@ -46,7 +42,7 @@ public class TimetableServiceImpl implements TimetableService {
     condition.put("term", list.get(0).getTerm());
     condition.put("week", list.get(0).getWeek());
 
-    // 获取原本课程表信息
+    // 获取原本实验实验课程表信息
     List<Timetable> timeTableList = timetableMapper.getTimetable(condition);
     Set<Integer> ids = new HashSet<>();
     Set<Integer> weekIds = new HashSet<>();
@@ -66,8 +62,8 @@ public class TimetableServiceImpl implements TimetableService {
         weekCourseMapper.update(list.get(i));
       }
     } else {
-      // 新增课程表
-      // 删除旧课程表
+      // 新增实验课程表
+      // 删除旧实验课程表
       timetableMapper.deleteTimeTable(condition);
       // 新增
       for (WeekCourse weekCourse : list) {
@@ -124,7 +120,7 @@ public class TimetableServiceImpl implements TimetableService {
     }
     return list;
   }
-  //  根据当前周过滤课程表中不属于当前周的课程
+  //  根据当前周过滤实验课程表中不属于当前周的实验课程
   private void dealMethod (List<WeekCourse> list, Map<String, Object> condition) {
     for (WeekCourse weekCourse : list) {
       Map<String, Object> map = new HashMap<>();
@@ -179,7 +175,7 @@ public class TimetableServiceImpl implements TimetableService {
     int num = timetableMapper.checkCount(condition);
     List<WeekCourse> weekCourseList = new ArrayList<>();
     if (num == 0) {
-      // 空课程表
+      // 空实验课程表
       for (int i = 1; i < 11; i++) {
         WeekCourse week = new WeekCourse();
         weekCourseList.add(week);
@@ -189,10 +185,10 @@ public class TimetableServiceImpl implements TimetableService {
       dealMethod(weekCourseList, condition);
     }
 
-    // 获取教师负责的专业、班级、课程
+    // 获取教师负责的专业、班级、实验课程
     List<TeacherCourse> teacherCourseList = teacherCourseMapper.getCourseListById(condition.get("teacherId").toString());
     List<WeekCourse> newList = new ArrayList<>();
-    // 将新课程的每一项设为"一"
+    // 将新实验课程的每一项设为"一"
     for (int i = 1; i < 11; i++) {
       WeekCourse week = new WeekCourse();
       dealWeek(week);
@@ -212,10 +208,10 @@ public class TimetableServiceImpl implements TimetableService {
     return newList;
 
 
-    // 获取教师负责的专业、班级、课程
+    // 获取教师负责的专业、班级、实验课程
 //    List<TeacherCourse> list = teacherCourseMapper.getCourseListById(condition.get("teacherId").toString());
 //    List<WeekCourse> newList = new ArrayList<>();
-//    // 将新课程的每一项设为"一"
+//    // 将新实验课程的每一项设为"一"
 //    for (int i = 1; i < 11; i++) {
 //      WeekCourse week = new WeekCourse();
 //      dealWeek(week);
@@ -235,7 +231,7 @@ public class TimetableServiceImpl implements TimetableService {
 //      map.put("grade", teacherCourse.getGrade());
 //      map.put("term", teacherCourse.getTerm());
 //      map.put("week", condition.get("week"));
-//      // 根据专业班级获取课程表
+//      // 根据专业班级获取实验课程表
 //      List<WeekCourse> weekCourseList = weekCourseMapper.getWeekCourse(map);
 //      dealMethod(weekCourseList, map);
 //      for (int i = 0; i < weekCourseList.size(); i++) {
@@ -253,7 +249,7 @@ public class TimetableServiceImpl implements TimetableService {
 
 
   private WeekCourse dealWeekCourse(WeekCourse newWeek, WeekCourse oldWeek, String name) {
-    // 当课程表的课程等于教师负责的课程时，存入新的课程表newWeek
+    // 当实验课程表的实验课程等于教师负责的实验课程时，存入新的实验课程表newWeek
 
     if (oldWeek.getMonday().equals(name)) {
       newWeek.setMonday(oldWeek.getMonday());

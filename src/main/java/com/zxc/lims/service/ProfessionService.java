@@ -4,17 +4,7 @@ import com.zxc.lims.pojo.Profession;
 
 import java.util.List;
 
-/**
- * Description 专业信息Service层
- * Author: zxc
- * Date: 2023/3/31 17:31
- **/
-public interface ProfessionService {
-/**
-* description: 获取专业
-* return:
-* Author: zxc
-* @Date: 2023/3/31 17:31
-*/
+
+public interface ProfessionService {//专业信息接口层
   List<Profession> getProfessionList();
 }

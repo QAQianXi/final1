@@ -2,12 +2,12 @@ package com.zxc.lims.utils;
 
 import java.io.File;
 
-public class ResourceUtil {
+public class ResourceUtil { // 存储文件
+
     public static String getPath() {
         String staticDir;
         String os = System.getProperty("os.name");
         if (os.toLowerCase().startsWith("win")) {  //windows系统
-
             staticDir = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files\\";
             // 如果结果目录不存在，则创建目录
             File resDirFile = new File(staticDir);
@@ -26,6 +26,5 @@ public class ResourceUtil {
             }
         }
         return staticDir;
-
     }
 }

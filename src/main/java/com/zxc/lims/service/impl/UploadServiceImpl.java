@@ -12,11 +12,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Description 上传业务层
- * Author: zxc
- * Date: 2023/4/29 13:55
- **/
+
 @Service
 public class UploadServiceImpl implements UploadService {
 

@@ -16,11 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Description 课程信息业务层
- * Author: zxc
- * Date: 2023/3/11 14:49
- **/
 @Service
 public class CourseServiceImpl implements CourseService {
   @Resource
@@ -57,7 +52,7 @@ public class CourseServiceImpl implements CourseService {
     courseMapper.addCourse(course);
 
     courseInfoMapper.deleteInfo(id);
-    // 新增课程的周数等
+    // 新增实验课程的周数等
     CourseInfo courseInfo = new CourseInfo();
     courseInfo.setStart(1);
     courseInfo.setEnd(25);

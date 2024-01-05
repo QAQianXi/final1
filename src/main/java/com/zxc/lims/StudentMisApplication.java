@@ -9,9 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 //@MapperScan("com.zxc.lims.mapper")
 public class StudentMisApplication {
-
   public static void main(String[] args) {
     SpringApplication.run(StudentMisApplication.class, args);
   }
-
 }

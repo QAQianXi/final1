@@ -15,13 +15,9 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * Description 登陆用户业务层
- * Author: zxc
- * Date2023/10/21 21:09
- **/
+
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService {//登陆用户业务层
     @Resource
     private UserMapper userMapper;
     @Resource
@@ -32,7 +28,7 @@ public class UserServiceImpl implements UserService {
     private AdminMapper adminMapper;
 
     @Override
-    public User getStudentInfo(Map<String, Object> condition) {
+    public User getUserInfo(Map<String, Object> condition) {
         String keyValue = condition.get("level").toString();
         if (keyValue.equals("0")) {
             return userMapper.getAdminInfo(condition);
@@ -46,15 +42,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean update(Map<String, Object> condition) {
         switch (condition.get("level").toString()) {
-            case "0":
-                condition.put("table", "admin");
-                break;
-            case "1":
-                condition.put("table", "teacher");
-                break;
-            case "2":
-                condition.put("table", "student");
-                break;
+            case "0" -> condition.put("table", "admin");
+            case "1" -> condition.put("table", "teacher");
+            case "2" -> condition.put("table", "student");
         }
         Integer num = userMapper.checkPasswordCount(condition);
         if (num != 0) {
@@ -69,31 +59,26 @@ public class UserServiceImpl implements UserService {
         List<User> studentList = studentMapper.getStudentTree();
         Set<User> studentSet = new HashSet<>(studentList);
         List<Map<String, Object>> professionList = new ArrayList<>();
-//  转化为前端树形结构所需的数据格式
+        // 转化为前端树形结构所需的数据格式
         Set<String> proSet = studentList.stream().map(User::getProfession).collect(Collectors.toSet());
         for (String profession : proSet) {
             Map<String, Object> stuProfessionTreeObj = new HashMap<>();
 
             stuProfessionTreeObj.put("label", profession);
             List<String> gradeList = studentMapper.getGradeByProfession(profession);
-
-//            gradeList = new HashSet<>(gradeList).stream().sorted(Comparator.comparing(Integer::new)).collect(Collectors.toList());
             gradeList = new HashSet<>(gradeList)
                     .stream()
                     .sorted(Comparator.comparing(Integer::valueOf))
                     .collect(Collectors.toList());
-            // 转成int，然后再排序
             List<Map<String, Object>> gradeTreeList = new ArrayList<>();
             for (String grade : gradeList) {
                 Map<String, Object> gradeTreeMap = new HashMap<>();
                 gradeTreeMap.put("label", grade);
                 gradeTreeList.add(gradeTreeMap);
             }
-
             stuProfessionTreeObj.put("children", gradeTreeList);
             professionList.add(stuProfessionTreeObj);
         }
-
         ArrayList<Object> treeList = new ArrayList<>();
         Map<String, Object> studentObj = new HashMap<>();
         Map<String, Object> teacherObj = new HashMap<>();
@@ -128,18 +113,13 @@ public class UserServiceImpl implements UserService {
     public User findUser(Map<String, Object> condition) {
         String id = condition.get("id").toString();
         String level = condition.get("level").toString();
-        User user = new User();
-        switch (level) {
-            case "0":
-                user = adminMapper.getUserById(id);
-                break;
-            case "1":
-                user = teacherMapper.getUserById(id);
-                break;
-            case "2":
-                user = studentMapper.getUserById(id);
-                break;
-        }
+        new User();
+        User user = switch (level) {
+            case "0" -> adminMapper.getUserById(id);
+            case "1" -> teacherMapper.getUserById(id);
+            case "2" -> studentMapper.getUserById(id);
+            default -> new User();
+        };
         return user;
     }
 

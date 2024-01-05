@@ -12,11 +12,6 @@ import jakarta.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Description
- * Author: zxc
- * Date: 2023/3/28 11:06
- **/
 @Service
 public class AdminServiceImpl implements AdminService {
 

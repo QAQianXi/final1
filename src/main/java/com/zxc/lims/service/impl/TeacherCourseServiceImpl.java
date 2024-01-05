@@ -13,11 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-/**
- * Description
- * Author: zxc
- * Date: 2023/3/29 15:09
- **/
+
 @Service
 public class TeacherCourseServiceImpl implements TeacherCourseService {
 

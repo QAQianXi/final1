@@ -8,72 +8,24 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Description 教师课程Mapper层
- * Author: zxc
- * Date: 2023/3/29 15:13
- **/
+
 @Mapper
 public interface TeacherCourseMapper {
-  /**
-   * description: 新增
-   * @param teacherCourse
-   * @return void
-   * @author zxc
-   * @date 2023/3/4 23:05
-   */
-  void add(TeacherCourse teacherCourse);
 
-  /**
-   * description: 删除
-   *
-   * @param ids
-   * @return void
-   * @author zxc
-   * @date 2023/8/29 14:55
-   */
-  void delete(@Param("ids") List<Integer> ids);
+  void add(TeacherCourse teacherCourse);//添加教师实验课程
 
-  /**
-   * description: 修改
-   *
-   * @param teacherCourse
-   * @return void
-   * @author zxc
-   * @date 2023/8/29 14:55
-   */
-  void update(TeacherCourse teacherCourse);
 
-  /**
-   * description: 根据教师id获取教师课程信息
-   * @param: String
-   * return: List<TeacherCourse>
-   * Author: zxc
-   * @Date: 2023/3/29 14:33
-   */
-  List<TeacherCourse> getCourseListById(@Param("id") String id);
-  /**
-   * description: 获取教师id和专业获取班级、课程名
-   * @param:
-   * return:
-   * Author: zxc
-   * @Date: 2023/4/4 20:54
-   */
-  List<TeacherCourse> getGradeInfoByMap(@Param("condition") Map<String, Object> condition);
-  /**
-  * description: 根据专业、班级和课程名获取所授课的教师id
-  * @param: condition
-  * return: String
-  * Author: zxc
-  * @Date: 2023/4/7 16:17
-  */
-  String getTeacherId(@Param("condition") Map<String, Object> condition);
-  /**
-  * description: 课程表中获取课程详细信息
-  * @param: condition
-  * return: TeacherCourse
-  * Author: zxc
-  * @Date: 2023/4/9 17:31
-  */
-  Course getCourseInfo(@Param("condition") Map<String, Object> condition);
+  void delete(@Param("ids") List<Integer> ids);//删除教师实验课程
+
+
+  void update(TeacherCourse teacherCourse);//更改教师实验课程
+
+
+  List<TeacherCourse> getCourseListById(@Param("id") String id);//根据教师id获取教师实验课程信息
+
+  List<TeacherCourse> getGradeInfoByMap(@Param("condition") Map<String, Object> condition);//获取教师id和专业获取班级、实验课程名
+
+  String getTeacherId(@Param("condition") Map<String, Object> condition);//根据专业、班级和实验课程名获取所授课的教师id
+
+  Course getCourseInfo(@Param("condition") Map<String, Object> condition);//实验课程表中获取实验课程详细信息
 }

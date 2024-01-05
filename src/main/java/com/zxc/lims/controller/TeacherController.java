@@ -11,37 +11,33 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Description 教师账号控制层
- * Author: zxc
- * Date: 2023/3/7 11:51
- **/
+
 @RestController
 @RequestMapping("/api/sms/user/teacher")
-public class TeacherController {
+public class TeacherController {//教师账号控制层
   @Autowired
   private TeacherService teacherService;
 
   @PostMapping
-  public void addTeacher(@RequestBody User user) {
+  public void addTeacher(@RequestBody User user) {//新增教师用户
     teacherService.addTeacher(user);
   }
 
   @DeleteMapping("/{ids}")
-  public void delete(@PathVariable("ids") Integer[] ids) {
+  public void delete(@PathVariable("ids") Integer[] ids) {//删除教师用户
     List<Integer> idsList = Arrays.asList(ids);
     teacherService.delete(idsList);
   }
 
   @PutMapping
-  public void update(@RequestBody User user) {
+  public void update(@RequestBody User user) {//修改教师用户
     teacherService.update(user);
   }
 
   @GetMapping("/getTeacherList")
   public PagingResult<User> getTeacherList (@RequestParam Map<String, Object> condition,
                                             @RequestParam(required = false, name = "$limit", defaultValue = "10") Integer limit,
-                                            @RequestParam(required = false, name = "$offset", defaultValue = "0") Integer offset) {
+                                            @RequestParam(required = false, name = "$offset", defaultValue = "0") Integer offset) {//获取教师账号信息列表
     RowBounds rowBounds = new RowBounds(offset, limit);
     return teacherService.getTeacherList(rowBounds, condition);
   }

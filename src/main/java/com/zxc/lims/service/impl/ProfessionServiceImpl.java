@@ -8,11 +8,7 @@ import org.springframework.stereotype.Service;
 import jakarta.annotation.Resource;
 import java.util.List;
 
-/**
- * Description
- * Author: zxc
- * Date: 2023/3/31 17:33
- **/
+
 @Service
 public class ProfessionServiceImpl implements ProfessionService {
   @Resource

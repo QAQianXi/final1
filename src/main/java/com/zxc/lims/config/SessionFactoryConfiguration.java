@@ -13,18 +13,13 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import javax.sql.DataSource;
 import java.io.IOException;
 
-/**
- * Description
- * Author: zxc
- * Date: 2023/2/27 11:31
- **/
+
 @Configuration
 public class SessionFactoryConfiguration {
-  // mybatis-config.xml配置文件的路径
 
-  // mybatis mapper文件所在路径
+
   @Value("${mybatis.mapper-locations}")
-  private String mapperPath;
+  private String mapperPath;// mapper对应sql文件所在路径
   // 实体类所在的package
   @Value("${mybatis.type-aliases-package}")
   private String entityPackage;

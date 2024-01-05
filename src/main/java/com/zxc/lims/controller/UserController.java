@@ -10,26 +10,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 
-/**
- * Description 登陆用户控制层
- * Author: zxc
- * Date2023/10/21 21:00
- **/
+
 @RestController
 @UserLoginToken
 @RequestMapping("/api/sms/user")
-public class UserController {
+public class UserController { //登陆用户控制层
     @Autowired
     private UserService userService;
 
     @GetMapping("/login")
     @PassToken
-    public User getStudentInfo(@RequestParam Map<String, Object> condition) {
+    public User getUserInfo(@RequestParam Map<String, Object> condition) {//根据用户、密码登陆
         Map<String, Object> map = new HashMap<>();
         map.put("username", condition.get("username").toString());
         map.put("password", condition.get("password").toString());
         map.put("level", condition.get("level"));
-        User user = userService.getStudentInfo(map);
+        User user = userService.getUserInfo(map);
         if(user == null) {
             return null;
         }
@@ -41,7 +37,7 @@ public class UserController {
     }
 
     @GetMapping("/edit/password")
-    public boolean update(@RequestParam Map<String, Object> condition) {
+    public boolean update(@RequestParam Map<String, Object> condition) {//修改密码
         Map<String, Object> map = new HashMap<>();
         map.put("username", condition.get("username").toString());
         map.put("password", condition.get("password").toString());
@@ -51,18 +47,18 @@ public class UserController {
     }
 
     @GetMapping("/getTree")
-    public List<Object> getTree() {
+    public List<Object> getTree() {//获取树状数据
         return userService.getTree();
     }
 
     @PassToken
     @GetMapping("/getSilent")
-    public boolean getSilent() {
+    public boolean getSilent() {//获取夜间模式
         return userService.getSilent();
     }
 
     @PutMapping("/setSilent/{state}")
-    public boolean setSilent(@PathVariable("state") Integer state) {
+    public boolean setSilent(@PathVariable("state") Integer state) {//修改夜间模式
         return userService.setSilent(state);
     }
 }

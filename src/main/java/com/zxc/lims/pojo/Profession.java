@@ -13,13 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Profession {
-  /**
-   * 专业id
-   */
-  private Integer id;
-  /**
-   * 专业名
-   */
-  private String name;
+
+  private Integer id;//专业id
+
+  private String name;//专业名
 
 }

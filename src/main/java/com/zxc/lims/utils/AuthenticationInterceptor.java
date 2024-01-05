@@ -23,16 +23,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 import java.util.*;
 
-/**
- * Description 拦截器去获取token并验证token
- * Author: zxc
- * Date: 2023/3/30 23:25
- **/
+
 @Slf4j
 @Component
-public class AuthenticationInterceptor implements HandlerInterceptor {
+public class AuthenticationInterceptor implements HandlerInterceptor {//拦截器去获取token并验证token
   private final Log logger = LogFactory.getLog(UploadServiceImpl.class);
-
   @Autowired
   UserService userService;
 
@@ -88,14 +83,14 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     Date oldTime = JWT.decode(token).getExpiresAt();
     Date refreshTime = JWT.decode(refreshToken).getExpiresAt();
-    long oldDiff = oldTime.getTime() - new Date().getTime();//这样得到的差值是毫秒级别
-    long refreshDiff = refreshTime.getTime() - new Date().getTime();//这样得到的差值是毫秒级别
+    long oldDiff = oldTime.getTime() - new Date().getTime();//TODO 2023-12-29 未理解？
+    long refreshDiff = refreshTime.getTime() - new Date().getTime();
     if (oldDiff <= 0) {
       if (refreshDiff <= 0) {
         logger.error("=== token 已过期, 请重新登录 ===");
         httpServletResponse.sendError(401);
         return false;
-//        throw new RuntimeException("401");
+        //throw new RuntimeException("401");
       }
     }
     String newToken = userService.getToken(user, 60* 60 * 1000);
@@ -103,11 +98,6 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     // 更新token
     httpServletResponse.setHeader("Authorization", newToken);
     httpServletResponse.setHeader("freshToken", newRefToken);
-
-    //检查有没有需要用户权限的注解
-//    if (method.isAnnotationPresent(UserLoginToken.class)) {  // 是否使用@UserLoginToken注解
-//      UserLoginToken userLoginToken = method.getAnnotation(UserLoginToken.class);
-//      if (userLoginToken.required()) {
         // 执行认证
         if (token == null) {
           throw new RuntimeException("=== 无token，请重新登录 ===");
@@ -120,11 +110,8 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
           logger.error("=== token验证失败 ===");
           httpServletResponse.sendError(401);
           return false;
-//          throw new RuntimeException("401");
+
         }
-//        return true;
-//      }
-//    }
     return true;
   }
 

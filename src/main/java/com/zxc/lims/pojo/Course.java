@@ -6,33 +6,29 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-/**
- * Description 课程信息实体类
- * Author: zxc
- * Date: 2023/3/11 14:50
- **/
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Course {
-  private String id;
-  private String name;
-  private Double credits;
-  private Integer score;
-  private Integer number;
-  private Integer year;
-  private Integer term;
-  private Integer type;
-  private String profession;
-  private String grade;
-  private String realName;
-  private String no;
-  private String studentId;
-  private String pointByUser;
-  private String scoreByUser;
-  private String creditsByUser;
-  private Integer start;
-  private Integer end;
-  private String room;
-  private Date createTime;
+public class Course {//实验课程信息类
+  private String id;//id
+  private String name;//实验课程名
+  private Double credits;//学分
+  private Integer score;//满分
+  private Integer number;//课时
+  private Integer year;//届时
+  private Integer term;//学期
+  private Integer type;//类型 1： 必修  2：选修
+  private String profession;//专业
+  private String grade;//班级
+  private String realName;//姓名
+  private String no;//学号
+  private String studentId;//学生账号
+  private String pointByUser;//查询的学生绩点
+  private String scoreByUser;//查询的学生分数
+  private String creditsByUser;//查询的学生学分
+  private Integer start;//周数 start
+  private Integer end;//周数 end
+  private String room;//教室
+  private Date createTime;//创建时间
 }

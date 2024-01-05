@@ -7,11 +7,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.beans.PropertyVetoException;
 
-/**
- * Description
- * Author: zxc
- * Date: 2023/2/26 23:39
- **/
 @Configuration
 // 配置mybatis的扫描路径
 @MapperScan("com.zxc.lims.mapper")

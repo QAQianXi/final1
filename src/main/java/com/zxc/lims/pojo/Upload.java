@@ -13,20 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Upload {
-  /**
-   * id
-   */
   private Integer id;
-  /**
-   * 用户 id
-   */
-  private String userId;
-  /**
-   * 用户等级
-   */
-  private Integer level;
-  /**
-   * 储存地址
-   */
-  private String url;
+  private String userId;//用户 id
+  private Integer level;//用户等级
+  private String url;//储存地址
 }

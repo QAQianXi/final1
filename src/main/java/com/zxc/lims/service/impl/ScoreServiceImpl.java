@@ -14,11 +14,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
 
-/**
- * Description
- * Author: zxc
- * Date: 2023/3/13 15:49
- **/
+
 @Service
 public class ScoreServiceImpl implements ScoreService {
   @Autowired
@@ -105,20 +101,21 @@ public class ScoreServiceImpl implements ScoreService {
     List<Map<String, Object>> list = new ArrayList<>();
     List<Course> courseList = new ArrayList<>();
     switch (condition.get("level").toString()) {
-      case "0":
+      case "0" -> {
         courseList = scoreMapper.getExportListByAdmin(condition);
         for (Course course : courseList) {
           adminCourseMethod(course);
         }
         list = dealScore(courseList);
-        break;
-      case "1":
+      }
+      case "1" -> {
         courseList = scoreMapper.getExportList(condition);
         list = dealScore(courseList);
-        break;
-      case "2":
+      }
+      case "2" -> {
         courseList = scoreMapper.getExportListByStudent(condition);
         list = dealScore(courseList);
+      }
     }
     return list;
   }
@@ -189,7 +186,7 @@ public class ScoreServiceImpl implements ScoreService {
       int good = 0;
       int unknown = 0;
       for (Course course : courseList) {
-        double scoreFull = course.getScore() / 100;
+        double scoreFull = course.getScore() / 100.0;
         if (course.getScoreByUser() == null) {
           unknown++;
         } else {

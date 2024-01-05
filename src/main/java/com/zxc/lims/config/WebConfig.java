@@ -6,11 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.*;
 
-/**
- * Description 解决vue+spring boot跨域问题
- * Author: zxc
- * Date: 2023/2/26 22:48
- **/
 @Configuration
 public class WebConfig extends WebMvcConfigurationSupport {
     @Override
@@ -38,7 +33,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
           .allowedMethods("GET", "POST", "DELETE", "PUT", "PATCH", "OPTIONS")
           .maxAge(3600 * 24);
     }
-  // 这个方法用来注册拦截器，我们自己写好的拦截器需要通过这里添加注册才能生效
+
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
 
@@ -50,7 +45,7 @@ public class WebConfig extends WebMvcConfigurationSupport {
   }
 
   @Bean
-  public HandlerInterceptor appInterceptor(){
+  public HandlerInterceptor appInterceptor(){// 注册拦截器
     return new AuthenticationInterceptor();
   }
 }
