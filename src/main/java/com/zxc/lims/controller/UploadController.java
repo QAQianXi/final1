@@ -66,7 +66,7 @@ public class UploadController { //图片上传控制层 TODO 2024-01-04 头像�
 
     @GetMapping("/getHeadImg")
     @UserLoginToken
-    public String getAdminList(@RequestParam Map<String, Object> condition, HttpServletRequest httpServletRequest) {//获取头像
+    public String getHeadImg(@RequestParam Map<String, Object> condition, HttpServletRequest httpServletRequest) {//获取头像
         return uploadService.getHeader(condition);
     }
 }

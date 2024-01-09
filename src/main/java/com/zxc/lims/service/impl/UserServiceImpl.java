@@ -42,9 +42,15 @@ public class UserServiceImpl implements UserService {//登陆用户业务层
     @Override
     public boolean update(Map<String, Object> condition) {
         switch (condition.get("level").toString()) {
-            case "0" -> condition.put("table", "admin");
-            case "1" -> condition.put("table", "teacher");
-            case "2" -> condition.put("table", "student");
+            case "0":
+                condition.put("table", "admin");
+                break;
+            case "1":
+                condition.put("table", "teacher");
+                break;
+            case "2":
+                condition.put("table", "student");
+                break;
         }
         Integer num = userMapper.checkPasswordCount(condition);
         if (num != 0) {

@@ -53,7 +53,8 @@ public class ScoreServiceImpl implements ScoreService {
   }
 
   @Override
-  public void addEntry(List<Score> list) {
+  public void
+  addEntry(List<Score> list) {
     for (Score score : list) {
       // string转double
       double scoreByUser = Double.parseDouble(score.getScoreByUser());
